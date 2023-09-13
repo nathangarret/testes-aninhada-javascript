@@ -2,34 +2,26 @@ const entrada = require('prompt-sync')({ sigint: true })
 
 // Ler 3 valores (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores. 
 
-let numerou_um = parseInt(entrada("Informe o primeiro valor: "));
+const numero_um = parseInt(entrada("Informe o primeiro valor: "));
 
-let numerou_dois = parseInt(entrada("Informe o segundo valor: "));
+const numero_dois = parseInt(entrada("Informe o segundo valor: "));
 
-let numerou_tres = parseInt(entrada("Informe o terceiro valor: "));
+const numero_tres = parseInt(entrada("Informe o terceiro valor: "));
 
-let maior;
-let medio;
-let soma;
-
-if (numerou_um != numerou_dois && numerou_um != numerou_tres) {
-    if (numerou_dois != numerou_um && numerou_dois != numerou_tres) {
-        if (numerou_tres != numerou_um && numerou_tres != numerou_dois) {
-            if (numerou_um > numerou_dois && numerou_um > numerou_tres) {
-                    maior = numerou_um;
-                if (numerou_um > numerou_dois && numerou_um < numerou_tres) {
-                    medio = numerou_um
-                }
-            } else if (numerou_dois > numerou_um && numerou_dois > numerou_tres) {
-                    maior = numerou_dois;
-                if(numerou_dois > numerou_um && numerou_dois < numerou_tres){
-                    medio = numerou_dois;
-                }
-            } else{ 
-                soma = maior = numerou_tres;
+if (numero_um != numero_dois && numero_um != numero_tres) {
+    if (numero_dois != numero_um && numero_dois != numero_tres) {
+        if (numero_tres != numero_um && numero_tres != numero_dois) {
+            if (numero_um > numero_dois && numero_um > numero_tres) {
+                console.log("A soma dos dois maiores valores é:", numero_um + Math.max(numero_dois, numero_tres));
+            } else if (numero_dois > numero_um && numero_dois > numero_tres) {
+                console.log("A soma dos dois maiores valores é:", numero_dois + Math.max(numero_um, numero_tres));
+            } else {
+                console.log("A soma dos dois maiores valores é:", numero_tres + Math.max(numero_um, numero_dois));
             }
         }
     }
 } else {
     console.log("Você digitou números iguais.");
 }
+
+// Math.max() => pega o número maior numero dentro dos ();
