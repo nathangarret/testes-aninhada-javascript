@@ -24,4 +24,3 @@ if (numero_um != numero_dois && numero_um != numero_tres) {
     console.log("Você digitou números iguais.");
 }
 
-// Math.max() => pega o número maior numero dentro dos ();
